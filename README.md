@@ -2,10 +2,21 @@
 
 ## Table of Contents
 
+- [Features](#features)
 - [Getting Started](#getting-started)
   - [Local Development](#local-development)
   - [Running with Docker](#running-with-docker)
 - [Running Tests](#running-tests)
+
+## Features
+
+- **User and Post Filtering**: Filter and search users and posts efficiently.
+- **API Integration**: Fetch and display data from a REST API with Axios and TanStack Query.
+- **Debounced Search**: Optimized search with debounce functionality to minimize API calls.
+- **Responsive Design**: Built with responsive styles for a better user experience on various devices.
+- **Pagination**: Navigate through multiple pages of posts.
+- **Dynamic Query Handling**: Use URL search parameters to manage query states.
+- **Testing**: Includes unit tests for components and hooks to ensure code quality.
 
 ## Getting Started
 
