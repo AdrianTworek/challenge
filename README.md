@@ -1,50 +1,81 @@
-# React + TypeScript + Vite
+**Description**: Simple React application for filtering users and posts, featuring seamless API integration.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Getting Started](#getting-started)
+  - [Local Development](#local-development)
+  - [Running with Docker](#running-with-docker)
+- [Running Tests](#running-tests)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### Local Development
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To run the application locally, follow these steps:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone the Repository**:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/AdrianTworek/challenge.git
+cd challenge
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Create a `.env` File**:
+   Create a `.env` file in the root of the project directory and add the following variable:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```env
+VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
 ```
+
+3. **Install Dependencies**:
+   Make sure you have [Node.js](https://nodejs.org/) and [pnpm](https://pnpm.io/) installed.
+
+```bash
+pnpm install
+```
+
+4. **Run the Development Server**:
+
+```bash
+pnpm dev
+```
+
+Open your browser and navigate to `http://localhost:5173` to view the application.
+
+### Running with Docker
+
+To run the application using Docker and Docker Compose, follow these steps:
+
+1. **Create a `.env` File**:
+
+Create a `.env` file in the root of the project directory with the following content:
+
+```env
+VITE_API_BASE_URL=https://jsonplaceholder.typicode.com
+```
+
+2. **Build and Run the Application**:
+
+```bash
+docker compose up --build
+```
+
+This will build the Docker image and start the container. The application will be accessible at `http://localhost:5173`
+
+3. **Stopping the Application**:
+
+To stop the application and remove the container, run:
+
+```bash
+docker compose down
+```
+
+## Running Tests
+
+To run the tests, use the following command:
+
+```bash
+pnpm test
+```
+
+This will execute the unit tests using Vitest.
